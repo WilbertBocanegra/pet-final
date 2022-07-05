@@ -8,9 +8,14 @@
 
   let isLogin = false;
 
-  onMount(() => {
-    console.log("hola", component.contentDocument.cookie);
-  });
+  let value;
+
+  const handleClick = () => {
+    component.contentWindow.postMessage(
+      value,
+      "https://final-login.vercel.app"
+    );
+  };
 </script>
 
 <iframe
@@ -20,4 +25,8 @@
 />
 
 <h1>PET</h1>
+
+<input bind:value />
+
+<button on:click={handleClick}>send message</button>
 <code>{isLogin}</code>
