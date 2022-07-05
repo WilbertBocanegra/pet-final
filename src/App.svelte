@@ -1,6 +1,10 @@
 <script>
   import { onMount } from "svelte";
-
+  onMount(() => {
+    window.addEventListener("message", (e) => {
+      e;
+    });
+  });
   /**
    * @type {HTMLIFrameElement}
    */
