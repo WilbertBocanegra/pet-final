@@ -9,7 +9,7 @@
   let isLogin = false;
 
   onMount(() => {
-    console.log("hola", component.contentDocument.cookie);
+    console.log("hola", component);
   });
 </script>
 
