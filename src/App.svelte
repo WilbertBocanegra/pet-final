@@ -1,10 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  onMount(() => {
-    window.addEventListener("message", (e) => {
-      e;
-    });
-  });
+
   /**
    * @type {HTMLIFrameElement}
    */
@@ -13,7 +9,11 @@
   let isLogin = false;
 
   let value;
-
+  onMount(() => {
+    component.contentWindow.addEventListener("message", (e) => {
+      console.log("ni idea pa que sirve esta madre", e);
+    });
+  });
   const handleClick = () => {
     component.contentWindow.postMessage(
       value,
