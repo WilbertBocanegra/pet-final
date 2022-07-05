@@ -9,13 +9,13 @@
   let isLogin = false;
 
   onMount(() => {
-    console.log("hola", component);
+    console.log("hola", component.contentDocument.cookie);
   });
 </script>
 
 <iframe
   bind:this={component}
-  src="https://final-login.vercel.app/"
+  src="https://final-login.vercel.app"
   title={undefined}
 />
 
